@@ -11,7 +11,7 @@
   },
   "${modID}:CullTheWeak": {
     "NAME": "Cull the Weak",
-    "DESCRIPTION": "Apply 1 Weak. NL Deal !D! damage for each Weak on the enemy."
+    "DESCRIPTION": "Apply 2 Weak. NL Deal !D! damage for each Weak on the enemy."
   },
   "${modID}:CursedFlash": {
     "NAME": "Cursed Flash",
@@ -34,8 +34,8 @@
   },
   "${modID}:PerfectBalance": {
     "NAME": "Perfect Balance",
-    "DESCRIPTION": "Whenever you apply Weak, gain 3 Block.",
-    "UPGRADE_DESCRIPTION": "Whenever you apply Weak, gain 5 Block."
+    "DESCRIPTION": "The first time you apply Weak each turn, gain 5 Block.",
+    "UPGRADE_DESCRIPTION": "The first time you apply Weak each turn, gain 6 Block."
   },
   "${modID}:Sap": {
     "NAME": "Sap",

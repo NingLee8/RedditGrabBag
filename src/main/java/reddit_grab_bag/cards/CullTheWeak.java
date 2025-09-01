@@ -19,8 +19,8 @@ public class CullTheWeak extends BaseCard{
 
     public CullTheWeak() {
         super (ID, info);
-        this.baseDamage = 8;
-        this.baseMagicNumber = 1;
+        this.baseDamage = 5;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
 
     }

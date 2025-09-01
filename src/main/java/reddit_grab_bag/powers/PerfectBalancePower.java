@@ -12,14 +12,23 @@ public class PerfectBalancePower extends BasePower{
 
     public static final String POWER_ID = makeID("PerfectBalancePower");
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
+    private boolean usedThisTurn;
 
     public PerfectBalancePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, false, owner, amount);
+        usedThisTurn = false;
+    }
+
+    public void atStartOfTurn() {
+        usedThisTurn = false;
     }
 
     public void onSpecificTrigger() {
-        this.flash();
-        this.addToBot(new GainBlockAction(this.owner, this.amount, Settings.FAST_MODE));
+        if (!usedThisTurn) {
+            this.flash();
+            this.addToBot(new GainBlockAction(this.owner, this.amount, Settings.FAST_MODE));
+            usedThisTurn = true;
+        }
     }
 
     @Override

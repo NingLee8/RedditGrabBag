@@ -16,7 +16,7 @@ public class Stake extends BaseRelic{
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.BOSS;
     private static final AbstractRelic.LandingSound SOUND = LandingSound.HEAVY;
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
     public boolean usedThisTurn;
 
     public Stake() {

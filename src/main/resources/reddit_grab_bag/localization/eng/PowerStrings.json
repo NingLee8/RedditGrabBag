@@ -14,7 +14,7 @@
   "${modID}:PerfectBalancePower": {
     "NAME": "Perfect Balance",
     "DESCRIPTIONS": [
-      "Whenever you apply Weak, gain #b", " Block."
+      "The first time you apply Weak each turn, gain #b", " Block."
     ]
   }
 }

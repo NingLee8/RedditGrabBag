@@ -1,4 +1,11 @@
 {
+  "${modID}:BileVessel": {
+    "NAME": "Bile Vessel",
+    "FLAVOR": "Don't ask where it comes from",
+    "DESCRIPTIONS": [
+      "Whenever you rest, fill all your empty potion slots with random potions."
+    ]
+  },
   "${modID}:BloodMoney": {
     "NAME": "Blood Money",
     "FLAVOR": "Don't ask where it comes from",
@@ -46,6 +53,13 @@
     "FLAVOR": "I wanna be young again!",
     "DESCRIPTIONS": [
       "Gain #b1 [E] at the start of your turn. Upon pick up, decrease your max HP by #b35."
+    ]
+  },
+  "${modID}:Icicle": {
+    "NAME": "Icicle",
+    "FLAVOR": "\"I would rather not get stabbed by an icicle, thanks\" - The Merchant, probably.",
+    "DESCRIPTIONS": [
+      "Whenever you Evoke a Frost Orb, deal 3 damage to a random enemy."
     ]
   },
   "${modID}:Kusabimaru": {
