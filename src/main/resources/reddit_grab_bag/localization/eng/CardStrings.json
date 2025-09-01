@@ -1,0 +1,64 @@
+{
+  "${modID}:Anticipation": {
+    "NAME": "Anticipation",
+    "DESCRIPTION": "At the start of your turn, gain 3 Vigor.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 5 Vigor."
+  },
+  "${modID}:ControlledChaos": {
+    "NAME": "Controlled Chaos",
+    "DESCRIPTION": "Play the top X cards of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile. NL Exhaust."
+  },
+  "${modID}:CullTheWeak": {
+    "NAME": "Cull the Weak",
+    "DESCRIPTION": "Apply 1 Weak. NL Deal !D! damage for each Weak on the enemy."
+  },
+  "${modID}:CursedFlash": {
+    "NAME": "Cursed Flash",
+    "DESCRIPTION": "Can only be played if a Curse is in hand. NL Exhaust 1 card. NL Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION":["I don't have a Curse in my hand."]
+  },
+  "${modID}:EndlessFlask": {
+    "NAME": "Endless Flask",
+    "DESCRIPTION": "Whenever you discard a card, apply !M! Poison to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you apply Weak, gain 5 Block."
+  },
+  "${modID}:ForgedInFire": {
+    "NAME": "Forged in Fire",
+    "DESCRIPTION": "Exhaust a card. NL Gain Strength equal to NL its cost.",
+    "UPGRADE_DESCRIPTION": "Exhaust a card. NL Gain Strength equal to NL its cost+1."
+  },
+  "${modID}:MakeshiftWeapon": {
+    "NAME": "Makeshift Weapon",
+    "DESCRIPTION": "Deal !D! damage. NL Add a copy of this to your discard pile. NL Exhaust."
+  },
+  "${modID}:PerfectBalance": {
+    "NAME": "Perfect Balance",
+    "DESCRIPTION": "Whenever you apply Weak, gain 3 Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you apply Weak, gain 5 Block."
+  },
+  "${modID}:Sap": {
+    "NAME": "Sap",
+    "DESCRIPTION": "Steal 1 Strength from an enemy. NL Exhaust."
+  },
+  "${modID}:Singularity": {
+    "NAME": "Singularity",
+    "DESCRIPTION": "Exhaust your hand. NL Channel 1 Dark. Trigger its passive for each Exhausted card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust your hand. NL Channel 1 Dark. Trigger its passive NL for each card + 2 NL Exhaust."
+  },
+  "${modID}:SpectralBlade": {
+    "NAME": "Spectral Blade",
+    "DESCRIPTION": "Deal !D! damage. NL Place this card on top of your draw pile. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Exhaust your hand. NL Channel 1 Dark. Trigger its passive NL for each card + 2 NL Exhaust."
+  },
+  "${modID}:SystemCooling": {
+    "NAME": "System Cooling",
+    "DESCRIPTION": "Gain 1 Orb slot. NL Channel 1 Frost.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 Orb slot. NL Channel 1 Frost."
+  },
+  "${modID}:ToxicDust": {
+    "NAME": "Toxic Dust",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Weak, apply !M! Poison.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 Orb slot. NL Channel 1 Frost."
+  }
+}

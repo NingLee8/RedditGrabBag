@@ -1,0 +1,171 @@
+{
+  "${modID}:BloodMoney": {
+    "NAME": "Blood Money",
+    "FLAVOR": "Don't ask where it comes from",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP, gain that much gold."
+    ]
+  },
+  "${modID}:BottomlessBottle": {
+    "NAME": "Bottomless Bottle",
+    "FLAVOR": "It always quenches your thirst, but never tastes the same.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, trigger a random potion effect."
+    ]
+  },
+  "${modID}:CeremonialTanto": {
+    "NAME": "Ceremonial Tanto",
+    "FLAVOR": "The blade is inscribed with its true name: Devoted Soul",
+    "DESCRIPTIONS": [
+      "Gain 1 [E] and lose #b1 HP at the start of your turn."
+    ]
+  },
+  "${modID}:ColdIce": {
+    "NAME": "Cold Ice",
+    "FLAVOR": "refreshing!",
+    "DESCRIPTIONS": [
+      "The first time you play a potion each combat, gain #b12 #yBlock."
+    ]
+  },
+  "${modID}:CosmicGown": {
+    "NAME": "Cosmic Gown",
+    "FLAVOR": "Tell me, have you seen the Yellow Sign?",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 #yArtifact. At the start of your turn, if you have no #yArtifact, gain #b1 [E] ."
+    ]
+  },
+  "${modID}:CursedDagger": {
+    "NAME": "Cursed Dagger",
+    "FLAVOR": "You never seem to be able to get away from that vicious blade.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] at the start of each turn. Every #b3 turns, spawn an enemy #yDagger."
+    ]
+  },
+  "${modID}:FountainOfYouth": {
+    "NAME": "Fountain of Youth",
+    "FLAVOR": "I wanna be young again!",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] at the start of your turn. Upon pick up, decrease your max HP by #b35."
+    ]
+  },
+  "${modID}:Kusabimaru": {
+    "NAME": "Kusabimaru",
+    "FLAVOR": "Hesitation is defeat.",
+    "DESCRIPTIONS": [
+      "Deal #b12 damage to an attacking enemy if your #yBlock is equal to incoming damage."
+    ]
+  },
+  "${modID}:LeadBalloon": {
+    "NAME": "Lead Balloon",
+    "FLAVOR": "Heavy metal so thin, it can stay afloat",
+    "DESCRIPTIONS": [
+      "The first time you draw a 0 cost card each turn, draw #b1 card."
+    ]
+  },
+  "${modID}:MistRaven": {
+    "NAME": "Mist Raven",
+    "FLAVOR": "Once you think you've caught one, all that will remain is feathers",
+    "DESCRIPTIONS": [
+      "The first time you lose HP each combat, gain #b1 #yIntangible."
+    ]
+  },
+  "${modID}:OverflowingChalice": {
+    "NAME": "Overflowing Chalice",
+    "FLAVOR": "Filled to the brim, it cannot hold any more.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] at the start of your turn. You cannot have more than #b4 [E] at a time."
+    ]
+  },
+  "${modID}:PhantomKunai": {
+    "NAME": "Phantom Kunai",
+    "FLAVOR": "Now then, son of Owl, shall we dance?",
+    "DESCRIPTIONS": [
+      "For each Attack played this turn, gain #b1 #yTemporary #yStrength next turn."
+    ]
+  },
+  "${modID}:PocketTorch": {
+    "NAME": "Pocket Torch",
+    "FLAVOR": "Lights up the night in a pinch.",
+    "DESCRIPTIONS": [
+      "The first time you have only #b1 card in hand each combat, gain [E] [E] ."
+    ]
+  },
+  "${modID}:ReversePrism": {
+    "NAME": "Reverse prism",
+    "FLAVOR": "Diversity fuels strength.",
+    "DESCRIPTIONS": [
+      "Whenever a unique orb type is #yEvoked for the first time, gain #b1 #yFocus.",
+      " Orbs evoked: "
+    ]
+  },
+  "${modID}:RunicDodecahedron": {
+    "NAME": "Runic Dodecahedron",
+    "FLAVOR": "Where have I seen this before..?",
+    "DESCRIPTIONS": [
+      "If your HP is a multiple of #b12, gain [E] at the start of your turn."
+    ]
+  },
+  "${modID}:ShepherdsCrook": {
+    "NAME": "Shepherd's Crook",
+    "FLAVOR": "Flavor text displayed in detailed relic view.",
+    "DESCRIPTIONS": [
+      "If you lost HP during the previous turn, add a #yMiracle to your hand at the start of your turn."
+    ]
+  },
+  "${modID}:SilkScarf": {
+    "NAME": "SilkScarf",
+    "FLAVOR": "Light and fashionable.",
+    "DESCRIPTIONS": [
+      "The first time you try to draw a card with a full hand each turn, gain [E] ."
+    ]
+  },
+  "${modID}:SixPoundFeather": {
+    "NAME": "Six Pound Feather",
+    "FLAVOR": "A magical feather able to lift your burdens.",
+    "DESCRIPTIONS": [
+      "Whenever you draw a #b3+ cost card, draw #b1 card."
+    ]
+  },
+  "${modID}:SneckosOtherEye": {
+    "NAME": "Snecko's Other Eye",
+    "FLAVOR": "In a blind man's world, the one eyed man is king... unless a two eyed man comes along.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, randomly gain #b0, #b1, or #b2 [E] ."
+    ]
+  },
+  "${modID}:SpareShield": {
+    "NAME": "Spare Shield",
+    "FLAVOR": "It's all a blur",
+    "DESCRIPTIONS": [
+      "#yBlock is not removed at the start of your first turn."
+    ]
+  },
+  "${modID}:Stake": {
+    "NAME": "Stake",
+    "FLAVOR": "The devil doesn't bargain... except sometimes.",
+    "DESCRIPTIONS": [
+      "The first card you play each turn costs HP instead of [E] ."
+    ]
+  },
+  "${modID}:SteppedOnRoach": {
+    "NAME": "Stepped-On Roach",
+    "FLAVOR": "Oops, didn't see you there...",
+    "DESCRIPTIONS": [
+      "Whenever you attack an enemy with less HP than you, apply #b1 #yVulnerable to that enemy."
+    ]
+  },
+  "${modID}:StepStool": {
+    "NAME": "Step Stool",
+    "FLAVOR": "Not that much bigger than me anymore!",
+    "DESCRIPTIONS": [
+      "Whenever you attack an enemy with more HP than you, deal #b2 damage to that enemy."
+    ]
+  },
+  "${modID}:Ukulele": {
+    "NAME": "Ukulele",
+    "FLAVOR": "Never gonna give you up...",
+    "DESCRIPTIONS": [
+      "Whenever you Exhaust a card, gain #b1 #yTemporary #yStrength."
+    ]
+  }
+}

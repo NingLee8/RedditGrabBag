@@ -1,0 +1,20 @@
+{
+  "${modID}:AnticipationPower": {
+    "NAME": "Anticipation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b", " Vigor."
+    ]
+  },
+  "${modID}:EndlessFlaskPower": {
+    "NAME": "Endless Flask",
+    "DESCRIPTIONS": [
+      "Whenever you discard a card, apply #b", " Poison to a random enemy."
+    ]
+  },
+  "${modID}:PerfectBalancePower": {
+    "NAME": "Perfect Balance",
+    "DESCRIPTIONS": [
+      "Whenever you apply Weak, gain #b", " Block."
+    ]
+  }
+}
