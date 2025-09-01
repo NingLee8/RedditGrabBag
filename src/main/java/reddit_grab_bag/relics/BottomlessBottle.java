@@ -16,7 +16,7 @@ public class BottomlessBottle extends BaseRelic{
     private static final String NAME = "BottomlessBottle";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.UNCOMMON;
-    private static final LandingSound SOUND = LandingSound.MAGICAL;
+    private static final LandingSound SOUND = LandingSound.CLINK;
     private static boolean firstTurn = true;
 
     public BottomlessBottle() {

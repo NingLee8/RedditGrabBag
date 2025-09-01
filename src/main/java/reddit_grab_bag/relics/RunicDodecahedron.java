@@ -12,7 +12,7 @@ public class RunicDodecahedron  extends BaseRelic{
     private static final String NAME = "RunicDodecahedron";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.UNCOMMON;
-    private static final LandingSound SOUND = LandingSound.SOLID;
+    private static final LandingSound SOUND = LandingSound.HEAVY;
 
     public RunicDodecahedron() {
             super(ID, NAME, AbstractCard.CardColor.COLORLESS, RARITY, SOUND);
