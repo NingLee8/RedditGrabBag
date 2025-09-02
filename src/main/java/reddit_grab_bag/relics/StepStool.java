@@ -30,11 +30,21 @@ public class StepStool extends BaseRelic{
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         if (c.type == AbstractCard.CardType.ATTACK) {
-            if (m.currentHealth > AbstractDungeon.player.currentHealth) {
-                this.addToBot(new RelicAboveCreatureAction(m, this));
-                this.addToBot(new DamageAction(m, new DamageInfo(null, 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            if (m == null) {
+                for (AbstractMonster monster:AbstractDungeon.getMonsters().monsters) {
+                    this.checkAndDealDamage(monster);
+                }
+            }
+            else {
+                this.checkAndDealDamage(m);
             }
         }
+    }
+
+    private void checkAndDealDamage(AbstractMonster m) {
+        if (m.currentHealth > AbstractDungeon.player.currentHealth) {
+            this.addToBot(new RelicAboveCreatureAction(m, this));
+            this.addToBot(new DamageAction(m, new DamageInfo(null, 2, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));        }
     }
 
     public AbstractRelic makeCopy() {

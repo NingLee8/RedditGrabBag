@@ -2,6 +2,7 @@ package reddit_grab_bag.powers;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.purple.WreathOfFlame;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -16,7 +17,8 @@ public class AnticipationPower extends BasePower{
     private static final AbstractPower.PowerType TYPE = AbstractPower.PowerType.BUFF;
 
     public AnticipationPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, TYPE, false, owner, amount);
+        super(POWER_ID, TYPE, false, owner, null, amount, true, false);
+        this.loadRegion("vigor");
     }
 
     @Override

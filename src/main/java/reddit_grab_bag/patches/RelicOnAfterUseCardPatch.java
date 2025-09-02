@@ -3,6 +3,8 @@ package reddit_grab_bag.patches;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import reddit_grab_bag.relics.BaseRelic;
 import reddit_grab_bag.relics.OverflowingChalice;
 
 
@@ -10,9 +12,11 @@ import reddit_grab_bag.relics.OverflowingChalice;
 public class RelicOnAfterUseCardPatch {
 
     public static void Prefix() {
-        if (AbstractDungeon.player.hasRelic(OverflowingChalice.ID)) {
-            OverflowingChalice chalice = (OverflowingChalice) AbstractDungeon.player.getRelic(OverflowingChalice.ID);
-            chalice.onAfterUseCard();
+        for (AbstractRelic r : AbstractDungeon.player.relics) {
+            if (r instanceof BaseRelic) {
+                BaseRelic br = (BaseRelic) r;
+                br.onAfterUseCard();
+            }
         }
     }
 }

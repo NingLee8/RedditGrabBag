@@ -8,13 +8,15 @@ Chosen based on balance, simplicity, and popularity.
 
 ## Relics
 
+* [BileVessel](https://www.reddit.com/r/slaythespire/comments/1m3359w/some_custom_relics_inspired_by_iconic/) by bmschulz
 * [BloodMoney](https://www.reddit.com/r/slaythespire/comments/1m57b2w/relic_idea/) by RykoGaming_
 * [Bottomless Bottle](https://www.reddit.com/r/slaythespire/comments/1m1evn6/a_bunch_of_random_relic_ideas/) by Feet_with_teeth
 * [Ceremonial Tanto](https://www.reddit.com/r/slaythespire/comments/1m1bcem/some_sekiroinspired_relics/) by bmschulz
-* [Cold Ice](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASliceBlock
-* [Cosmic Gown](https://www.reddit.com/r/slaythespire/comments/1m0fqfx/mayas_relic_maker_is_cool/) by ExplorerHaunting8353
+* [Cold Ice](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
+* [Cosmic Gown](https://www.reddit.com/r/slaythespire/comments/1m0fqfx/mayas_relic_maker_is_cool/) by eudamonia_2400
 * [Cursed Dagger](https://www.reddit.com/r/slaythespire/comments/1m1evn6/a_bunch_of_random_relic_ideas/) by Feet_with_teeth
-* [Fountain of Youth](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASliceBlock
+* [Fountain of Youth](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
+* [Ice Cubes](https://www.reddit.com/r/slaythespire/comments/1lfjwai/i_feel_like_the_damage_number_on_this_needs_to_be/) (renamed to Icicle) by ElegantPoet3386
 * [Kusabimaru](https://www.reddit.com/r/slaythespire/comments/1m1bcem/some_sekiroinspired_relics/) by bmschulz
 * [Lead Balloon](https://www.reddit.com/r/slaythespire/comments/1mn8nhu/cost_dependent_extra_draw/) by whispywhisp6
 * [Mist Raven](https://www.reddit.com/r/slaythespire/comments/1m1bcem/some_sekiroinspired_relics/) by bmschulz
@@ -27,7 +29,7 @@ Chosen based on balance, simplicity, and popularity.
 * [Silk Scarf](https://www.reddit.com/r/slaythespire/comments/1mok01i/even_more_custom_cards_for_each_character/) by TheMonji
 * [Six Pound Feather](https://www.reddit.com/r/slaythespire/comments/1mn8nhu/cost_dependent_extra_draw/) by whispywhisp6
 * [Snecko's Other Eye](https://www.reddit.com/r/slaythespire/comments/1mrg0v1/if_you_liked_snecko_eye_i_give_you_more_snecko/) by like45ninjas
-* [Spare Shield](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASliceBlock
+* [Spare Shield](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
 * [Stake](https://www.reddit.com/r/slaythespire/comments/1moumsk/1_classspecific_relic_idea_for_each_character_and/) by Betrayed_Poet
 * [Stepped-on Roach](https://www.reddit.com/r/slaythespire/comments/1mxfcfy/who_stepped_on_him/) by Flover_tm
 * [Step Stool](https://www.reddit.com/r/slaythespire/comments/1mxfcfy/who_stepped_on_him/) by Flover_tm
@@ -54,16 +56,17 @@ Chosen based on balance, simplicity, and popularity.
 ---
 
 
-### Known Issues & Deliberate Choices
+### Deliberate Choices
 
-#### Cursed Dagger (relic)
-Dagger will always trigger on the right side of the fight during Shield and Spear fight.
+#### Blood Money
 
-The dagger position is ignored when determined the existence of the Surrounded! effect.
+Does not trigger on gold gained with Bloody Idol.
+
+(Whenever you lose HP, gain gold. Whenever you gain gold, heal 5 HP)
 
 #### Bottomless Bottle (relic)
 
-Ignores the following potions:
+Ignores the following potions to avoid fatal turn 1 scenarios:
 
 * Fairy in a Bottle
 * Distilled Chaos
@@ -74,8 +77,6 @@ Ignores the following potions:
 
 Does not trigger when Block and Incoming Damage is 0.
 
-Intentional choice to limit power.
-
 #### Sap (card)
 
 Player does not gain strength if the effect is blocked by Artifact.
@@ -83,5 +84,17 @@ Player does not gain strength if the effect is blocked by Artifact.
 #### Singularity (card)
 
 Upgrade text removes the word "Exhausted" from the description in order to fit all text on the card within 5 line limit.
+
+#### Silk Scarf & Shepherd's Crook
+
+Originally designed as Power cards but reworked as relics
+
+### Known Issues
+
+#### Cursed Dagger (relic)
+Dagger will always trigger on the right side of the fight during Shield and Spear fight.
+
+The dagger position is ignored when determined the existence of the Surrounded! effect.
+
 
 ---

@@ -43,6 +43,7 @@ public class OverflowingChalice extends BaseRelic {
         this.limitEnergy();
     }
 
+    @Override
     public void onAfterUseCard(){
         this.limitEnergy();
     }

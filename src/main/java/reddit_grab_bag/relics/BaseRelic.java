@@ -108,4 +108,6 @@ public abstract class BaseRelic extends CustomRelic {
 
     // Very last trigger, after orbs and powers
     public void onEndOfStartTurn() {}
+
+    public void onAfterUseCard() {}
 }

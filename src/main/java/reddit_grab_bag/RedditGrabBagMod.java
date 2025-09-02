@@ -39,9 +39,7 @@ import java.util.*;
 public class RedditGrabBagMod implements
         EditCardsSubscriber,
         EditStringsSubscriber,
-        EditKeywordsSubscriber,
         EditRelicsSubscriber,
-        AddAudioSubscriber,
         PostInitializeSubscriber,
         PostPotionUseSubscriber {
     public static ModInfo info;
@@ -134,49 +132,6 @@ public class RedditGrabBagMod implements
                 localizationPath(lang, "PowerStrings.json"));
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 localizationPath(lang, "RelicStrings.json"));
-        BaseMod.loadCustomStringsFile(UIStrings.class,
-                localizationPath(lang, "UIStrings.json"));
-    }
-
-    @Override
-    public void receiveEditKeywords()
-    {
-        Gson gson = new Gson();
-        String json = Gdx.files.internal(localizationPath(defaultLanguage, "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-        KeywordInfo[] keywords = gson.fromJson(json, KeywordInfo[].class);
-        for (KeywordInfo keyword : keywords) {
-            keyword.prep();
-            registerKeyword(keyword);
-        }
-
-        if (!defaultLanguage.equals(getLangString())) {
-            try
-            {
-                json = Gdx.files.internal(localizationPath(getLangString(), "Keywords.json")).readString(String.valueOf(StandardCharsets.UTF_8));
-                keywords = gson.fromJson(json, KeywordInfo[].class);
-                for (KeywordInfo keyword : keywords) {
-                    keyword.prep();
-                    registerKeyword(keyword);
-                }
-            }
-            catch (Exception e)
-            {
-                logger.warn(modID + " does not support " + getLangString() + " keywords.");
-            }
-        }
-    }
-
-    private void registerKeyword(KeywordInfo info) {
-        BaseMod.addKeyword(modID.toLowerCase(), info.PROPER_NAME, info.NAMES, info.DESCRIPTION);
-        if (!info.ID.isEmpty())
-        {
-            keywords.put(info.ID, info);
-        }
-    }
-
-    @Override
-    public void receiveAddAudio() {
-        loadAudio(Sounds.class);
     }
 
     @Override
@@ -190,46 +145,6 @@ public class RedditGrabBagMod implements
             }
         }
     }
-
-    private static final String[] AUDIO_EXTENSIONS = { ".ogg", ".wav", ".mp3" }; //There are more valid types, but not really worth checking them all here
-    private void loadAudio(Class<?> cls) {
-        try {
-            Field[] fields = cls.getDeclaredFields();
-            outer:
-            for (Field f : fields) {
-                int modifiers = f.getModifiers();
-                if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers) && f.getType().equals(String.class)) {
-                    String s = (String) f.get(null);
-                    if (s == null) { //If no defined value, determine path using field name
-                        s = audioPath(f.getName());
-
-                        for (String ext : AUDIO_EXTENSIONS) {
-                            String testPath = s + ext;
-                            if (Gdx.files.internal(testPath).exists()) {
-                                s = testPath;
-                                BaseMod.addAudio(s, s);
-                                f.set(null, s);
-                                continue outer;
-                            }
-                        }
-                        throw new Exception("Failed to find an audio file \"" + f.getName() + "\" in " + resourcesFolder + "/audio; check to ensure the capitalization and filename are correct.");
-                    }
-                    else { //Otherwise, load defined path
-                        if (Gdx.files.internal(s).exists()) {
-                            BaseMod.addAudio(s, s);
-                        }
-                        else {
-                            throw new Exception("Failed to find audio file \"" + s + "\"; check to ensure this is the correct filepath.");
-                        }
-                    }
-                }
-            }
-        }
-        catch (Exception e) {
-            logger.error("Exception occurred in loadAudio: ", e);
-        }
-    }
-
     //These methods are used to generate the correct filepaths to various parts of the resources folder.
     public static String localizationPath(String lang, String file) {
         return resourcesFolder + "/localization/" + lang + "/" + file;

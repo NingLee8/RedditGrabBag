@@ -28,7 +28,10 @@ public class CullTheWeak extends BaseCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
-        for (int i = 0; i < m.getPower(WeakPower.POWER_ID).amount + 1; i++) {
+
+        int weakAmount = (m.hasPower(WeakPower.POWER_ID) ? m.getPower(WeakPower.POWER_ID).amount : 0) + this.magicNumber;
+
+        for (int i = 0; i < weakAmount; i++) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
     }

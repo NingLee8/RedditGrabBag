@@ -2,7 +2,9 @@ package reddit_grab_bag.relics;
 
 import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 
 import static reddit_grab_bag.RedditGrabBagMod.makeID;
@@ -23,10 +25,12 @@ public class BloodMoney extends BaseRelic {
     public void onLoseHp(int damageAmount) {
         if (damageAmount > 0) {
             this.flash();
-            AbstractDungeon.effectList.add(new RainingGoldEffect(damageAmount * 2, true));
-            this.addToBot(new GainGoldAction(damageAmount));
+            if (AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT)) {
+                AbstractDungeon.effectList.add(new RainingGoldEffect(damageAmount * 2, true));
+            }
+            CardCrawlGame.goldGained += damageAmount;
+            AbstractDungeon.player.gold += damageAmount;
         }
-
     }
 
     @Override
