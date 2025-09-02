@@ -21,9 +21,8 @@ public class LimitEnergyAction extends AbstractGameAction {
     public void update() {
         if (EnergyPanel.getCurrentEnergy() > this.energyLimit) {
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, r));
-            this.addToBot(new LoseEnergyAction(EnergyPanel.getCurrentEnergy() - this.energyLimit));
+            AbstractDungeon.player.loseEnergy(EnergyPanel.getCurrentEnergy() - this.energyLimit);
         }
-        r.releaseLock();
         tickDuration();
     }
 }

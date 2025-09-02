@@ -14,7 +14,7 @@ public class OnAfterStanceChangePatch {
         if (___id.equals(WrathStance.STANCE_ID) || ___id.equals(DivinityStance.STANCE_ID)) {
             if (AbstractDungeon.player.hasRelic(OverflowingChalice.ID)) {
                 OverflowingChalice chalice = (OverflowingChalice) AbstractDungeon.player.getRelic(OverflowingChalice.ID);
-                chalice.onAfterStanceChange();
+                chalice.limitEnergy();
             }
         }
     }

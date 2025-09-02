@@ -92,12 +92,14 @@ Originally designed as Power cards but reworked as relics
 ### Known Issues
 
 #### Cursed Dagger (relic)
+Fight does not stop if dagger is the only enemy left (It is YOUR minion)
+
 Dagger will always trigger on the right side of the fight during Shield and Spear fight.
 
 The dagger position is ignored when determined the existence of the Surrounded! effect.
 
-#### Stepped-on Roach
+Possibly in need of a buff (extra energy on the turn dagger spawns?)
 
-Vulnerable looks like it is applied before the attack (but it's not)
+3 energy/3 turns for Incoming 9+25 damage + 1 Wound or redirect 20 damage
 
 ---

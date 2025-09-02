@@ -2,6 +2,7 @@ package reddit_grab_bag.relics;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import reddit_grab_bag.actions.LimitEnergyAction;
 import static reddit_grab_bag.RedditGrabBagMod.makeID;
@@ -12,13 +13,9 @@ public class OverflowingChalice extends BaseRelic {
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.BOSS;
     private static final LandingSound SOUND = LandingSound.MAGICAL;
-    private static int ENERGY_LIMIT = 4;
-    // Prevent double triggers for turnStart and Stance change events
-    private boolean limitLock;
-
+    private static final int ENERGY_LIMIT = 4;
     public OverflowingChalice() {
         super(ID, NAME, AbstractCard.CardColor.COLORLESS, RARITY, SOUND);
-        limitLock = false;
     }
 
     public void onEquip() {
@@ -27,10 +24,6 @@ public class OverflowingChalice extends BaseRelic {
 
     public void onUnequip() {
         --AbstractDungeon.player.energy.energyMaster;
-    }
-
-    public void atPreBattle() {
-        limitLock = false;
     }
 
     @Override
@@ -48,20 +41,8 @@ public class OverflowingChalice extends BaseRelic {
         this.limitEnergy();
     }
 
-    public void onAfterStanceChange() {
-        this.limitEnergy();
-    }
-
-    private void limitEnergy() {
-        if (!limitLock) {
-            this.addToBot(new LimitEnergyAction(ENERGY_LIMIT, this));
-        }
-        limitLock = true;
-    }
-
-    // Called in LimitEnergyAction
-    public void releaseLock() {
-        limitLock = false;
+    public void limitEnergy() {
+        this.addToBot(new LimitEnergyAction(ENERGY_LIMIT, this));
     }
 
     @Override

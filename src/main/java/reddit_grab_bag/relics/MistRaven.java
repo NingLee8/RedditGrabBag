@@ -41,7 +41,6 @@ public class MistRaven extends BaseRelic{
 
     @Override
     public void onVictory() {
-        this.pulse = false;
         this.grayscale = false;
     }
 

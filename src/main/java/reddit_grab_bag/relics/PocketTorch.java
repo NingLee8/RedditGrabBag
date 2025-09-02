@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import reddit_grab_bag.actions.PocketTorchAction;
@@ -21,6 +22,7 @@ public class PocketTorch extends BaseRelic{
     public PocketTorch() {
         super(ID, NAME, AbstractCard.CardColor.COLORLESS, RARITY, SOUND);
     }
+
     public void atPreBattle() {
         usedThisCombat = false;
         this.pulse = true;
@@ -28,17 +30,14 @@ public class PocketTorch extends BaseRelic{
         this.beginPulse();
     }
 
+    @Override
     public void onAfterUseCard() {
         this.addToBot(new PocketTorchAction(this));
     }
 
+    @Override
     public void onAfterPotionUse() {
         this.addToBot(new PocketTorchAction(this));
-    }
-
-    public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
-        this.pulse = false;
     }
 
     public void onVictory() {

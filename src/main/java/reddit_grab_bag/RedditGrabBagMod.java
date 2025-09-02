@@ -137,9 +137,7 @@ public class RedditGrabBagMod implements
     @Override
     public void receivePostPotionUse(AbstractPotion potion) {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
-            System.out.println(r.getClass());
             if (r instanceof BaseRelic) {
-                System.out.println("true");
                 BaseRelic br = (BaseRelic) r;
                 br.onAfterPotionUse();
             }

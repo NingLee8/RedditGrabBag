@@ -1,22 +1,22 @@
 package reddit_grab_bag.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.actions.utility.HandCheckAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import reddit_grab_bag.relics.BaseRelic;
 
-
-@SpirePatch(clz= HandCheckAction.class, method="update")
-public class RelicOnAfterUseCardPatch {
+@SpirePatch(clz= AbstractPlayer.class, method="useCard")
+public class RelicOnAfterUseCardWithParamPatch {
 
     // Overflowing Chalice, Pocket Torch checks
-    // After absolutely all action has resolved
-    public static void Prefix() {
+    public static void Postfix(AbstractPlayer __instance, AbstractCard c, AbstractMonster monster, int energyOnUse) {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r instanceof BaseRelic) {
                 BaseRelic br = (BaseRelic) r;
-                br.onAfterUseCard();
+                br.onAfterUseCard(c, monster);
             }
         }
     }

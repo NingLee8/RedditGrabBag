@@ -2,6 +2,7 @@ package reddit_grab_bag.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import reddit_grab_bag.util.GeneralUtils;
 import reddit_grab_bag.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -110,4 +111,6 @@ public abstract class BaseRelic extends CustomRelic {
     public void onEndOfStartTurn() {}
 
     public void onAfterUseCard() {}
+
+    public void onAfterUseCard(AbstractCard c, AbstractMonster monster) {}
 }

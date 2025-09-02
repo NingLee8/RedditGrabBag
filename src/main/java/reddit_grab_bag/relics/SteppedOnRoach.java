@@ -23,7 +23,7 @@ public class SteppedOnRoach extends BaseRelic{
     }
 
     @Override
-    public void onPlayCard(AbstractCard c, AbstractMonster m) {
+    public void onAfterUseCard(AbstractCard c, AbstractMonster m) {
         if (c.type == AbstractCard.CardType.ATTACK) {
             if (m == null) {
                 for (AbstractMonster monster:AbstractDungeon.getMonsters().monsters) {
