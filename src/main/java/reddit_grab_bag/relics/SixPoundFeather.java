@@ -13,7 +13,7 @@ public class SixPoundFeather extends BaseRelic{
     private static final String NAME = "SixPoundFeather";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.UNCOMMON;
-    private static final LandingSound SOUND = LandingSound.CLINK;
+    private static final LandingSound SOUND = LandingSound.MAGICAL;
 
     public SixPoundFeather() {
         super(ID, NAME, AbstractCard.CardColor.COLORLESS, RARITY, SOUND);

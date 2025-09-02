@@ -11,6 +11,7 @@ import reddit_grab_bag.relics.OverflowingChalice;
 @SpirePatch(clz= HandCheckAction.class, method="update")
 public class RelicOnAfterUseCardPatch {
 
+    // Overflowing Chalice, Pocket Torch checks
     public static void Prefix() {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r instanceof BaseRelic) {

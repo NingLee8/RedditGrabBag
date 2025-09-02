@@ -16,7 +16,6 @@ public class LeadBalloon extends BaseRelic{
     private static final LandingSound SOUND = LandingSound.CLINK;
     private static boolean usedThisTurn = false;
 
-
     public LeadBalloon() {
         super(ID, NAME, AbstractCard.CardColor.COLORLESS, RARITY, SOUND);
         usedThisTurn = false;

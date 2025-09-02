@@ -13,7 +13,7 @@ public class CeremonialTanto extends BaseRelic{
     private static final String NAME = "CeremonialTanto";
     public static final String ID = makeID(NAME);
     private static final AbstractRelic.RelicTier RARITY = AbstractRelic.RelicTier.BOSS;
-    private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.MAGICAL;
+    private static final AbstractRelic.LandingSound SOUND = AbstractRelic.LandingSound.CLINK;
     private static AbstractPlayer p;
 
     public CeremonialTanto() {

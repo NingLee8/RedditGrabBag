@@ -9,6 +9,7 @@ import reddit_grab_bag.relics.BaseRelic;
 @SpirePatch(clz= EnableEndTurnButtonAction.class, method="update")
 public class OnEndOfStartTurnPatch {
 
+    // Overflowing Chalice, Stake
     public static void Prefix() {
         for (AbstractRelic r : AbstractDungeon.player.relics) {
             if (r instanceof BaseRelic) {

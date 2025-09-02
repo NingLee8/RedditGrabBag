@@ -1,6 +1,5 @@
 package reddit_grab_bag.relics;
 
-import com.megacrit.cardcrawl.actions.common.GainGoldAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -28,6 +27,7 @@ public class BloodMoney extends BaseRelic {
             if (AbstractDungeon.getCurrRoom().phase.equals(AbstractRoom.RoomPhase.COMBAT)) {
                 AbstractDungeon.effectList.add(new RainingGoldEffect(damageAmount * 2, true));
             }
+            // Intentional do not use play.gainGOld to prevent BloodyIdol interaction
             CardCrawlGame.goldGained += damageAmount;
             AbstractDungeon.player.gold += damageAmount;
         }

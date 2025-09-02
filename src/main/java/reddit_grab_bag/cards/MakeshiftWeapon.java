@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import reddit_grab_bag.util.CardStats;
 
-public class MakeshiftWeapon extends BaseCard{
+public class MakeshiftWeapon extends BaseCard {
 
     public static final String ID = makeID(MakeshiftWeapon.class.getSimpleName());
 

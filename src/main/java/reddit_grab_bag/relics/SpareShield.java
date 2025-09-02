@@ -16,7 +16,7 @@ public class SpareShield extends BaseRelic{
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.COMMON;
     private static final LandingSound SOUND = LandingSound.HEAVY;
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
     public SpareShield() {
         super(ID, NAME, AbstractCard.CardColor.PURPLE, RARITY, SOUND);
@@ -24,7 +24,6 @@ public class SpareShield extends BaseRelic{
     }
 
     public void atBattleStart() {
-
         this.flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         addToBot(new ApplyPowerAction(this.p, this.p, new BlurPower(this.p, 1), 1));

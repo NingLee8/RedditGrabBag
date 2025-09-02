@@ -11,7 +11,7 @@ public class EndlessFlask extends BaseCard{
 
     public static final String ID = makeID(EndlessFlask.class.getSimpleName());
 
-    private static final CardStats info = new CardStats(CardColor.PURPLE, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF, 1);
+    private static final CardStats info = new CardStats(CardColor.GREEN, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF, 1);
 
     public EndlessFlask() {
         super(ID, info);

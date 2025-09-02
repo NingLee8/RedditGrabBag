@@ -24,6 +24,7 @@ public class BottomlessBottle extends BaseRelic{
         firstTurn = true;
     }
 
+    // Use end of start turn rather than pre-battle for gambler's brew
     @Override
     public void onEndOfStartTurn(){
         if (!firstTurn) {

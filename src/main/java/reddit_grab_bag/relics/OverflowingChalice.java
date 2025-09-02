@@ -59,6 +59,7 @@ public class OverflowingChalice extends BaseRelic {
         limitLock = true;
     }
 
+    // Called in LimitEnergyAction
     public void releaseLock() {
         limitLock = false;
     }

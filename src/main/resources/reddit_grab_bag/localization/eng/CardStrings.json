@@ -21,7 +21,7 @@
   "${modID}:EndlessFlask": {
     "NAME": "Endless Flask",
     "DESCRIPTION": "Whenever you discard a card, apply !M! Poison to a random enemy.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you apply Weak, gain 5 Block."
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you discard a card, apply !M! Poison to a random enemy."
   },
   "${modID}:ForgedInFire": {
     "NAME": "Forged in Fire",
@@ -35,7 +35,7 @@
   "${modID}:PerfectBalance": {
     "NAME": "Perfect Balance",
     "DESCRIPTION": "The first time you apply Weak each turn, gain 5 Block.",
-    "UPGRADE_DESCRIPTION": "The first time you apply Weak each turn, gain 6 Block."
+    "UPGRADE_DESCRIPTION": "The first time you apply Weak each turn, gain 7 Block."
   },
   "${modID}:Sap": {
     "NAME": "Sap",
@@ -48,8 +48,7 @@
   },
   "${modID}:SpectralBlade": {
     "NAME": "Spectral Blade",
-    "DESCRIPTION": "Deal !D! damage. NL Place this card on top of your draw pile. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Exhaust your hand. NL Channel 1 Dark. Trigger its passive NL for each card + 2 NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Place this card on top of your draw pile. NL Ethereal."
   },
   "${modID}:SystemCooling": {
     "NAME": "System Cooling",
@@ -58,7 +57,6 @@
   },
   "${modID}:ToxicDust": {
     "NAME": "Toxic Dust",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Weak, apply !M! Poison.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 Orb slot. NL Channel 1 Frost."
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy has Weak, apply !M! Poison."
   }
 }

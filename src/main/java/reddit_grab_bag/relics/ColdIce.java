@@ -24,7 +24,6 @@ public class ColdIce extends BaseRelic{
 
     @Override
     public void onUsePotion() {
-
         if (!usedThisCombat) {
             this.flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));

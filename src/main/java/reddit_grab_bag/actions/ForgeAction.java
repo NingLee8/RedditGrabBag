@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class ForgeAction extends AbstractGameAction {
 
-    private AbstractPlayer p;
+    private final AbstractPlayer p;
 
-    private boolean upgraded;
+    private final boolean upgraded;
 
     public ForgeAction(boolean upgraded) {
         this.upgraded = upgraded;

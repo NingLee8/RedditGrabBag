@@ -96,5 +96,8 @@ Dagger will always trigger on the right side of the fight during Shield and Spea
 
 The dagger position is ignored when determined the existence of the Surrounded! effect.
 
+#### Stepped-on Roach
+
+Vulnerable looks like it is applied before the attack (but it's not)
 
 ---
