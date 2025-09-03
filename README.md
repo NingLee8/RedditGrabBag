@@ -41,17 +41,17 @@ Chosen based on balance, simplicity, and popularity.
 
 * [Anticipation](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
 * [Controlled Chaos](https://www.reddit.com/r/slaythespire/comments/1lofe3z/card_idea_i_had/) by RykoGaming_
-* [Cull the Weak](https://www.reddit.com/r/slaythespire/comments/1m2y739/weak_based_cards_for_the_silent/) by gekko513
+* [Cull the Weak](https://www.reddit.com/r/slaythespire/comments/1m41i5j/revised_weakbased_cards_and_a_relic_for_the_silent/) by gekko513
 * [Cursed Flash](https://www.reddit.com/r/slaythespire/comments/1lun026/a_brick_that_demands_more_bricks_in_your_deck/) by whispywhisp6
 * [Endless Flask](https://www.reddit.com/r/slaythespire/comments/1lgz9d9/i_really_like_cards_that_combine_different/) by RykoGaming_
 * [Forged in Fire](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
 * [Makeshift Weapon](https://www.reddit.com/r/slaythespire/comments/1mok01i/even_more_custom_cards_for_each_character/) by TheMonji
-* [Perfect Balance](https://www.reddit.com/r/slaythespire/comments/1m2y739/weak_based_cards_for_the_silent/) by gekko513
+* [Perfect Balance](https://www.reddit.com/r/slaythespire/comments/1m41i5j/revised_weakbased_cards_and_a_relic_for_the_silent/) by gekko513
 * [Sap](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
 * [Singularity](https://www.reddit.com/r/slaythespire/comments/1m0b9zy/throw_your_deck_into_a_black_hole_why_not/) by BaiJiGuan
 * [Spectral Blade](https://www.reddit.com/r/slaythespire/comments/1lpc2l1/spectral_blade_ironclad_uncommon_attack/) by mattanimus
 * [System Cooling](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
-* [Toxic Dust](https://www.reddit.com/r/slaythespire/comments/1m2y739/weak_based_cards_for_the_silent/) by gekko513
+* [Toxic Dust](https://www.reddit.com/r/slaythespire/comments/1m41i5j/revised_weakbased_cards_and_a_relic_for_the_silent/) by gekko513
 
 ---
 
