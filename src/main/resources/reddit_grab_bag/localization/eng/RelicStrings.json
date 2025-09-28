@@ -175,6 +175,13 @@
       "Whenever you attack an enemy with more HP than you, deal #b2 damage to that enemy."
     ]
   },
+  "${modID}:Thunderstone": {
+    "NAME": "Thunderstone",
+    "FLAVOR": "Energy channeled grants a future burst of power. \nby altilly",
+    "DESCRIPTIONS": [
+      "For each remaining [E] at the end of your turn, gain #b1 #yTemporary #yStrength next turn."
+    ]
+  },
   "${modID}:Ukulele": {
     "NAME": "Ukulele",
     "FLAVOR": "Never gonna give you up... \nby ElegantPoet3386",

@@ -1,9 +1,10 @@
 package reddit_grab_bag;
 
-import basemod.AutoAdd;
-import basemod.BaseMod;
+import basemod.*;
 import basemod.interfaces.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -11,10 +12,8 @@ import reddit_grab_bag.cards.BaseCard;
 import reddit_grab_bag.relics.BaseRelic;
 import reddit_grab_bag.util.GeneralUtils;
 import reddit_grab_bag.util.KeywordInfo;
-import reddit_grab_bag.util.Sounds;
 import reddit_grab_bag.util.TextureLoader;
 import com.badlogic.gdx.Files;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
@@ -23,16 +22,12 @@ import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.Patcher;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @SpireInitializer
@@ -48,6 +43,12 @@ public class RedditGrabBagMod implements
     private static final String resourcesFolder = checkResourcesPath();
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
 
+    public static Properties defaultSettings = new Properties();
+    public static final String ENABLE_CUSTOM_RELICS = "enableIroncladRelics";
+    public static final String ENABLE_CUSTOM_CARDS = "enableCustomCards";
+    public static boolean enableCustomRelics = true;
+    public static boolean enableCustomCards = true;
+
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
     public static String makeID(String id) {
@@ -62,6 +63,18 @@ public class RedditGrabBagMod implements
     public RedditGrabBagMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
+
+        defaultSettings.setProperty(ENABLE_CUSTOM_RELICS, "TRUE");
+        defaultSettings.setProperty(ENABLE_CUSTOM_CARDS, "TRUE");
+
+        try {
+            SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
+            config.load();
+            enableCustomRelics = config.getBool(ENABLE_CUSTOM_RELICS);
+            enableCustomCards = config.getBool(ENABLE_CUSTOM_CARDS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -71,9 +84,42 @@ public class RedditGrabBagMod implements
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
+        ModPanel settingsPanel = new ModPanel();
+        ModLabeledToggleButton enableCustomRelicsButton = new ModLabeledToggleButton("Enable Custom Relics",
+                350.0f, 700.0f, Settings.GOLD_COLOR, FontHelper.charDescFont,
+                enableCustomRelics, settingsPanel, (label) -> {},
+                (button) -> {
+                    enableCustomRelics = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
+                        config.setBool(ENABLE_CUSTOM_RELICS, enableCustomRelics);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        ModLabeledToggleButton enableCustomCardsButton = new ModLabeledToggleButton("Enable Custom Cards",
+                350.0f, 660.0f, Settings.GOLD_COLOR, FontHelper.charDescFont,
+                enableCustomCards, settingsPanel, (label) -> {},
+                (button) -> {
+                    enableCustomCards = button.enabled;
+                    try {
+                        SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
+                        config.setBool(ENABLE_CUSTOM_CARDS, enableCustomCards);
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+
+        settingsPanel.addUIElement(new ModLabel("Must restart game to take effect", 350.0F, 750.0F, settingsPanel, me -> {}));
+        settingsPanel.addUIElement(enableCustomRelicsButton);
+        settingsPanel.addUIElement(enableCustomCardsButton);
+
         //If you want to set up a config panel, that will be done here.
         //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
-        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, null);
+        BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, settingsPanel);
     }
 
     /*----------Localization----------*/
@@ -89,10 +135,12 @@ public class RedditGrabBagMod implements
 
     @Override
     public void receiveEditCards() {
-        new AutoAdd(modID) //Loads files from this mod
-                .packageFilter(BaseCard.class) //In the same package as this class
-                .setDefaultSeen(true) //And marks them as seen in the compendium
-                .cards(); //Adds the cards
+        if (enableCustomCards) {
+            new AutoAdd(modID) //Loads files from this mod
+                    .packageFilter(BaseCard.class) //In the same package as this class
+                    .setDefaultSeen(true) //And marks them as seen in the compendium
+                    .cards(); //Adds the cards
+        }
     }
 
     @Override
@@ -116,11 +164,13 @@ public class RedditGrabBagMod implements
 
     @Override
     public void receiveEditRelics() {
-        new AutoAdd(modID).packageFilter(BaseRelic.class)
-                .any(BaseRelic.class, (info, relic) -> {
-                   BaseMod.addRelic(relic, relic.relicType);
-                    UnlockTracker.markRelicAsSeen(relic.relicId);
-                });
+        if (enableCustomRelics) {
+            new AutoAdd(modID).packageFilter(BaseRelic.class)
+                    .any(BaseRelic.class, (info, relic) -> {
+                        BaseMod.addRelic(relic, relic.relicType);
+                        UnlockTracker.markRelicAsSeen(relic.relicId);
+                    });
+        }
     }
 
     private void loadLocalization(String lang) {

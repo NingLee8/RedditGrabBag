@@ -33,6 +33,7 @@ Chosen based on balance, simplicity, and popularity.
 * [Stake](https://www.reddit.com/r/slaythespire/comments/1moumsk/1_classspecific_relic_idea_for_each_character_and/) by Betrayed_Poet
 * [Stepped-on Roach](https://www.reddit.com/r/slaythespire/comments/1mxfcfy/who_stepped_on_him/) by Flover_tm
 * [Step Stool](https://www.reddit.com/r/slaythespire/comments/1mxfcfy/who_stepped_on_him/) by Flover_tm
+* [Thunderstone](https://www.reddit.com/r/slaythespire/comments/1nrnjbx/relic_idea_converting_extra_energy_to_temp/) by altilly
 * [Ukulele](https://www.reddit.com/r/slaythespire/comments/1lz27qw/ironclad_exclusive_more_exhaust_synergy/) by ElegantPoet3386
 
 ---
