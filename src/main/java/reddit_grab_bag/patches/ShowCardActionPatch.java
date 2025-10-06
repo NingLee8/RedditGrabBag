@@ -1,20 +1,15 @@
 package reddit_grab_bag.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.megacrit.cardcrawl.actions.utility.ShowCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.GremlinHorn;
 import reddit_grab_bag.cards.PlasmaLance;
-import reddit_grab_bag.relics.OverflowingChalice;
 
-@SpirePatch(clz= GremlinHorn.class, method="onMonsterDeath")
-public class AfterMonsterDeathPatch {
+@SpirePatch(clz= ShowCardAction.class, method="update")
+public class ShowCardActionPatch {
 
-    public static void Postfix() {
-        if (AbstractDungeon.player.hasRelic(OverflowingChalice.ID)) {
-            OverflowingChalice chalice = (OverflowingChalice) AbstractDungeon.player.getRelic(OverflowingChalice.ID);
-            chalice.limitEnergy();
-        }
+    public static void Prefix() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.cardID.equals(PlasmaLance.ID)) {
                 PlasmaLance pl = (PlasmaLance) c;

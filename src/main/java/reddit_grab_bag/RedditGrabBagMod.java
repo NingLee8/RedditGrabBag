@@ -3,12 +3,14 @@ package reddit_grab_bag;
 import basemod.*;
 import basemod.interfaces.*;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import reddit_grab_bag.cards.BaseCard;
+import reddit_grab_bag.cards.PlasmaLance;
 import reddit_grab_bag.relics.BaseRelic;
 import reddit_grab_bag.util.GeneralUtils;
 import reddit_grab_bag.util.KeywordInfo;
@@ -190,6 +192,12 @@ public class RedditGrabBagMod implements
             if (r instanceof BaseRelic) {
                 BaseRelic br = (BaseRelic) r;
                 br.onAfterPotionUse();
+            }
+        }
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.cardID.equals(PlasmaLance.ID)) {
+                PlasmaLance pl = (PlasmaLance) c;
+                pl.checkAndSetCost();
             }
         }
     }

@@ -14,6 +14,8 @@ Chosen based on balance, simplicity, and popularity.
 * [Ceremonial Tanto](https://www.reddit.com/r/slaythespire/comments/1m1bcem/some_sekiroinspired_relics/) by bmschulz
 * [Cold Ice](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
 * [Cosmic Gown](https://www.reddit.com/r/slaythespire/comments/1m0fqfx/mayas_relic_maker_is_cool/) by eudamonia_2400
+* [Crate of Fire Bombs](https://www.reddit.com/r/slaythespire/comments/1neycpi/potion_related_relic_better_on_silent/) by BaiJiGuan
+* [Crystal Monocle](https://www.reddit.com/r/slaythespire/comments/1nm66xh/the_golden_series/) by RealMennis
 * [Cursed Dagger](https://www.reddit.com/r/slaythespire/comments/1m1evn6/a_bunch_of_random_relic_ideas/) by Feet_with_teeth
 * [Fountain of Youth](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
 * [Ice Cubes](https://www.reddit.com/r/slaythespire/comments/1lfjwai/i_feel_like_the_damage_number_on_this_needs_to_be/) (renamed to Icicle) by ElegantPoet3386
@@ -46,8 +48,12 @@ Chosen based on balance, simplicity, and popularity.
 * [Cursed Flash](https://www.reddit.com/r/slaythespire/comments/1lun026/a_brick_that_demands_more_bricks_in_your_deck/) by whispywhisp6
 * [Endless Flask](https://www.reddit.com/r/slaythespire/comments/1lgz9d9/i_really_like_cards_that_combine_different/) by RykoGaming_
 * [Forged in Fire](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
+* [Lightspeed](https://www.reddit.com/r/slaythespire/comments/1m6i0st/custom_card_weekly_megathread/n54mxik/) by ScoutTheDawg
 * [Makeshift Weapon](https://www.reddit.com/r/slaythespire/comments/1mok01i/even_more_custom_cards_for_each_character/) by TheMonji
+* [Mind Wipe](https://www.reddit.com/r/slaythespire/comments/1n6dhu4/just_realized_the_scry_archetype_has_no_rare/) by BaiJiGuan
 * [Perfect Balance](https://www.reddit.com/r/slaythespire/comments/1m41i5j/revised_weakbased_cards_and_a_relic_for_the_silent/) by gekko513
+* [Plasma Lance](https://www.reddit.com/r/slaythespire/comments/1kww5yn/would_an_effect_like_this_work_in_slay_the_spire/) by ScoutTheDawg
+* [Prismatic Form](https://www.reddit.com/r/slaythespire/comments/1nt75qi/awakened_one_loves_it/) by Chum724
 * [Sap](https://www.reddit.com/r/slaythespire/comments/1mnlkwv/a_fun_and_simple_custom_card_for_each_character/) by TheMonji
 * [Singularity](https://www.reddit.com/r/slaythespire/comments/1m0b9zy/throw_your_deck_into_a_black_hole_why_not/) by BaiJiGuan
 * [Spectral Blade](https://www.reddit.com/r/slaythespire/comments/1lpc2l1/spectral_blade_ironclad_uncommon_attack/) by mattanimus

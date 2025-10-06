@@ -41,6 +41,20 @@
       "Start each combat with #b1 #yArtifact. At the start of your turn, if you have no #yArtifact, gain #b1 [E] ."
     ]
   },
+  "${modID}:CrateOfFireBombs": {
+    "NAME": "Crate of Fire Bombs",
+    "FLAVOR": "The oppression of the Heart will never return!\nby BaJiGuan",
+    "DESCRIPTIONS": [
+      "Whenever you use a potion, also throw an Explosive Potion."
+    ]
+  },
+  "${modID}:CrystalMonocle": {
+    "NAME": "Crystal Monocle",
+    "FLAVOR": "Be careful when wearing this around byrds.\nby RealMennis",
+    "DESCRIPTIONS": [
+      "The first time you draw a rare card each turn, gain [E] ."
+    ]
+  },
   "${modID}:CursedDagger": {
     "NAME": "Cursed Dagger",
     "FLAVOR": "You never seem to be able to get away from that vicious blade.\n--- Feet_with_teeth",

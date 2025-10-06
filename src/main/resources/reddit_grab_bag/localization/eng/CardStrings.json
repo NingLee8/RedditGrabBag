@@ -28,14 +28,31 @@
     "DESCRIPTION": "Exhaust a card. NL Gain Strength equal to NL its cost.",
     "UPGRADE_DESCRIPTION": "Exhaust a card. NL Gain Strength equal to NL its cost+1."
   },
+  "${modID}:Lightspeed": {
+    "NAME": "Lightspeed",
+    "DESCRIPTION": "Draw !M! cards. NL Gain [E] for each card drawn while your hand is full. NL Exhaust."
+  },
   "${modID}:MakeshiftWeapon": {
     "NAME": "Makeshift Weapon",
     "DESCRIPTION": "Deal !D! damage. NL Add a copy of this to your discard pile. NL Exhaust."
+  },
+  "${modID}:MindWipe": {
+    "NAME": "Mind Wipe",
+    "DESCRIPTION": "Unplayable. NL If this card is discarded during a Scry, deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["I can't play this card."]
   },
   "${modID}:PerfectBalance": {
     "NAME": "Perfect Balance",
     "DESCRIPTION": "The first time you apply Weak each turn, gain 5 Block.",
     "UPGRADE_DESCRIPTION": "The first time you apply Weak each turn, gain 7 Block."
+  },
+  "${modID}:PlasmaLance": {
+    "NAME": "Plasma Lance",
+    "DESCRIPTION": "Costs 1 less [E] for each card in your hand. NL Deal !D! damage to ALL enemies."
+  },
+  "${modID}:PrismaticForm": {
+    "NAME": "Prismatic Form",
+    "DESCRIPTION": "At the start of your turn, add a random Power of any color NL into your hand. NL It costs 0 this turn."
   },
   "${modID}:Sap": {
     "NAME": "Sap",
