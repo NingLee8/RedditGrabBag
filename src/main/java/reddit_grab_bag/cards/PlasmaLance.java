@@ -32,6 +32,7 @@ public class PlasmaLance extends BaseCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(6);
+            this.upgradeBaseCost(9);
         }
     }
 

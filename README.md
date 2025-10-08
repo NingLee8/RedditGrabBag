@@ -17,6 +17,7 @@ Chosen based on balance, simplicity, and popularity.
 * [Crate of Fire Bombs](https://www.reddit.com/r/slaythespire/comments/1neycpi/potion_related_relic_better_on_silent/) by BaiJiGuan
 * [Crystal Monocle](https://www.reddit.com/r/slaythespire/comments/1nm66xh/the_golden_series/) by RealMennis
 * [Cursed Dagger](https://www.reddit.com/r/slaythespire/comments/1m1evn6/a_bunch_of_random_relic_ideas/) by Feet_with_teeth
+* [False Idol](https://www.reddit.com/r/slaythespire/comments/1n76x1u/deva_form_for_everybody_yippee/) by Chum724
 * [Fountain of Youth](https://www.reddit.com/r/slaythespire/comments/1m239ms/relic_ideas_which_ive_thought_about_for_a_while/) by ImASlimeBlock
 * [Ice Cubes](https://www.reddit.com/r/slaythespire/comments/1lfjwai/i_feel_like_the_damage_number_on_this_needs_to_be/) (renamed to Icicle) by ElegantPoet3386
 * [Kusabimaru](https://www.reddit.com/r/slaythespire/comments/1m1bcem/some_sekiroinspired_relics/) by bmschulz

@@ -62,6 +62,13 @@
       "Gain #b1 [E] at the start of each turn. Every #b3 turns, spawn an enemy #yDagger."
     ]
   },
+  "${modID}:FalseIdol": {
+    "NAME": "False Idol",
+    "FLAVOR": "A false god can nonetheless be a source of comfort.\nby Chum724",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain -1 [E] , and increase this gain by 1."
+    ]
+  },
   "${modID}:FountainOfYouth": {
     "NAME": "Fountain of Youth",
     "FLAVOR": "I wanna be young again!\n--- ImASlimeBlock",
