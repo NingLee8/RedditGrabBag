@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import javassist.CtClass;
 import reddit_grab_bag.cards.BaseCard;
 import reddit_grab_bag.cards.PlasmaLance;
 import reddit_grab_bag.relics.BaseRelic;
@@ -31,6 +32,7 @@ import org.apache.logging.log4j.Logger;
 import org.scannotation.AnnotationDB;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @SpireInitializer
 public class RedditGrabBagMod implements
@@ -46,10 +48,9 @@ public class RedditGrabBagMod implements
     public static final Logger logger = LogManager.getLogger(modID); //Used to output to the console.
 
     public static Properties defaultSettings = new Properties();
-    public static final String ENABLE_CUSTOM_RELICS = "enableIroncladRelics";
-    public static final String ENABLE_CUSTOM_CARDS = "enableCustomCards";
-    public static boolean enableCustomRelics = true;
-    public static boolean enableCustomCards = true;
+    public static Map<String, Boolean> contentMap;
+    public static List<String> relicNames;
+    public static List<String> cardNames;
 
     //This is used to prefix the IDs of various objects like cards and relics,
     //to avoid conflicts between different mods using the same name for things.
@@ -64,16 +65,36 @@ public class RedditGrabBagMod implements
 
     public RedditGrabBagMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
-        logger.info(modID + " subscribed to BaseMod.");
 
-        defaultSettings.setProperty(ENABLE_CUSTOM_RELICS, "TRUE");
-        defaultSettings.setProperty(ENABLE_CUSTOM_CARDS, "TRUE");
+        logger.info(modID + " subscribed to BaseMod.");
+        relicNames = new AutoAdd(modID)
+                            .findClasses(BaseRelic.class).stream()
+                            .map(CtClass::getSimpleName)
+                            .map(RedditGrabBagMod::makeID)
+                            .collect(Collectors.toList());
+        cardNames = new AutoAdd(modID)
+                .findClasses(BaseCard.class).stream()
+                .map(CtClass::getSimpleName)
+                .map(RedditGrabBagMod::makeID)
+                .collect(Collectors.toList());
+        contentMap = new HashMap<>();
+
+        for (String relicName : relicNames) {
+            defaultSettings.setProperty(relicName, "TRUE");
+        }
+        for (String cardName : cardNames) {
+            defaultSettings.setProperty(cardName, "TRUE");
+        }
 
         try {
             SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
             config.load();
-            enableCustomRelics = config.getBool(ENABLE_CUSTOM_RELICS);
-            enableCustomCards = config.getBool(ENABLE_CUSTOM_CARDS);
+            for (String relicName : relicNames) {
+                contentMap.put(relicName, config.getBool(relicName));
+            }
+            for (String cardName : cardNames) {
+                contentMap.put(cardName, config.getBool(cardName));
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -86,42 +107,69 @@ public class RedditGrabBagMod implements
         //Set up the mod information displayed in the in-game mods menu.
         //The information used is taken from your pom.xml file.
 
-        ModPanel settingsPanel = new ModPanel();
-        ModLabeledToggleButton enableCustomRelicsButton = new ModLabeledToggleButton("Enable Custom Relics",
-                350.0f, 700.0f, Settings.GOLD_COLOR, FontHelper.charDescFont,
-                enableCustomRelics, settingsPanel, (label) -> {},
-                (button) -> {
-                    enableCustomRelics = button.enabled;
-                    try {
-                        SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
-                        config.setBool(ENABLE_CUSTOM_RELICS, enableCustomRelics);
-                        config.save();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+        ScrollableModPanel settingsPanel = new ScrollableModPanel();
 
-        ModLabeledToggleButton enableCustomCardsButton = new ModLabeledToggleButton("Enable Custom Cards",
-                350.0f, 660.0f, Settings.GOLD_COLOR, FontHelper.charDescFont,
-                enableCustomCards, settingsPanel, (label) -> {},
-                (button) -> {
-                    enableCustomCards = button.enabled;
-                    try {
-                        SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
-                        config.setBool(ENABLE_CUSTOM_CARDS, enableCustomCards);
-                        config.save();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+        int index = 0;
+        for (String relicName : relicNames) {
+            createAddContentButton(settingsPanel, true, index, relicName);
+            index++;
+        }
 
-        settingsPanel.addUIElement(new ModLabel("Must restart game to take effect", 350.0F, 750.0F, settingsPanel, me -> {}));
-        settingsPanel.addUIElement(enableCustomRelicsButton);
-        settingsPanel.addUIElement(enableCustomCardsButton);
+        index = 0;
+        for (String cardName : cardNames) {
+            createAddContentButton(settingsPanel, false, index, cardName);
+            index++;
+        }
 
-        //If you want to set up a config panel, that will be done here.
-        //You can find information about this on the BaseMod wiki page "Mod Config and Panel".
+        settingsPanel.addUIElement(new ScrollableModLabel("Must restart game to take effect", 400.0F, 800.0F, settingsPanel, me -> {}));
+
+        settingsPanel.addUIElement(new ScrollableModButton("Enable All Relics", 400.0F, 680.0F, settingsPanel, me -> updateAllContent(true, true, settingsPanel)));
+        settingsPanel.addUIElement(new ScrollableModButton("Disable All Relics", 400.0F, 590.0F, settingsPanel, me -> updateAllContent(false, true, settingsPanel)));
+
+        settingsPanel.addUIElement(new ScrollableModButton("Enable All Cards", 900.0f, 680.0F, settingsPanel, me -> updateAllContent(true, false, settingsPanel)));
+        settingsPanel.addUIElement(new ScrollableModButton("Disable All Cards", 900.0f, 590.0F, settingsPanel, me -> updateAllContent(false, false, settingsPanel)));
+
+
         BaseMod.registerModBadge(badgeTexture, info.Name, GeneralUtils.arrToString(info.Authors), info.Description, settingsPanel);
+    }
+
+    private void updateAllContent(boolean enable, boolean isRelic, ScrollableModPanel settingsPanel) {
+        for(IUIElement element : settingsPanel.getUIElements()) {
+            if (element instanceof ScrollableToggleButton) {
+                ScrollableToggleButton button = (ScrollableToggleButton) element;
+                if (button.isRelic == isRelic) {
+                    button.toggle.enabled = enable;
+                }
+            }
+        }
+        try {
+            SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
+            config.load();
+            for (String contentName : isRelic ? relicNames : cardNames) {
+                contentMap.put(contentName, enable);
+                config.setBool(contentName, enable);
+                config.save();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createAddContentButton(ModPanel settingsPanel, boolean isRelic, int index, String contentId) {
+        ScrollableToggleButton enableCustomRelicsButton = new ScrollableToggleButton(isRelic, contentId.substring(contentId.indexOf(":")+1),
+                isRelic ? 400.0F : 900.0f, 525.0f - (index * 40.0f), Settings.GOLD_COLOR, FontHelper.charDescFont,
+                contentMap.get(contentId), settingsPanel, (label) -> {},
+                (button) -> {
+                    contentMap.put(contentId, button.enabled);
+                    try {
+                        SpireConfig config = new SpireConfig(info.Name, modID + "Config", defaultSettings);
+                        config.setBool(contentId, contentMap.get(contentId));
+                        config.save();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+        settingsPanel.addUIElement(enableCustomRelicsButton);
     }
 
     /*----------Localization----------*/
@@ -133,16 +181,15 @@ public class RedditGrabBagMod implements
     }
     private static final String defaultLanguage = "eng";
 
-    public static final Map<String, KeywordInfo> keywords = new HashMap<>();
-
     @Override
     public void receiveEditCards() {
-        if (enableCustomCards) {
-            new AutoAdd(modID) //Loads files from this mod
-                    .packageFilter(BaseCard.class) //In the same package as this class
-                    .setDefaultSeen(true) //And marks them as seen in the compendium
-                    .cards(); //Adds the cards
-        }
+        new AutoAdd(modID).packageFilter(BaseCard.class)
+                .any(BaseCard.class, (info, card) -> {
+                    if (contentMap.get(card.cardID)) {
+                        BaseMod.addCard(card);
+                        UnlockTracker.markCardAsSeen(card.cardID);
+                    }
+                });
     }
 
     @Override
@@ -166,13 +213,13 @@ public class RedditGrabBagMod implements
 
     @Override
     public void receiveEditRelics() {
-        if (enableCustomRelics) {
-            new AutoAdd(modID).packageFilter(BaseRelic.class)
-                    .any(BaseRelic.class, (info, relic) -> {
+        new AutoAdd(modID).packageFilter(BaseRelic.class)
+                .any(BaseRelic.class, (info, relic) -> {
+                    if (contentMap.get(relic.relicId)) {
                         BaseMod.addRelic(relic, relic.relicType);
                         UnlockTracker.markRelicAsSeen(relic.relicId);
-                    });
-        }
+                    }
+                });
     }
 
     private void loadLocalization(String lang) {
