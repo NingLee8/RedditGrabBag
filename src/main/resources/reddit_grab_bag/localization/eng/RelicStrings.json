@@ -125,6 +125,13 @@
       "The first time you have only #b1 card in hand each combat, gain [E] [E] ."
     ]
   },
+  "${modID}:Rafflesia": {
+    "NAME": "Rafflesia",
+    "FLAVOR": "The stench is overpowering.\nby TheMonji",
+    "DESCRIPTIONS": [
+      "Whenever poison damage to an enemy is #yFatal, heal #b2 HP."
+    ]
+  },
   "${modID}:ReversePrism": {
     "NAME": "Reverse prism",
     "FLAVOR": "Diversity fuels strength.\nby RykoGaming_",
@@ -138,6 +145,20 @@
     "FLAVOR": "Where have I seen this before..?\nby TheMonji",
     "DESCRIPTIONS": [
       "If your HP is a multiple of #b12, gain [E] at the start of your turn."
+    ]
+  },
+  "${modID}:SaltShaker": {
+    "NAME": "Salt Shaker",
+    "FLAVOR": "Good for wounds and flavor.\nby TheMonji",
+    "DESCRIPTIONS": [
+      "Whenever you debuff an enemy, gain #b1 #yTemporary #yStrength."
+    ]
+  },
+  "${modID}:Scalpel": {
+    "NAME": "Scalpel",
+    "FLAVOR": "Hey doc - you've done this before, right?\nby TheMonji",
+    "DESCRIPTIONS": [
+      "Whenever you remove or transform a card in your deck, increase your Max HP by #b2."
     ]
   },
   "${modID}:ShepherdsCrook": {
@@ -196,6 +217,13 @@
       "Whenever you attack an enemy with more HP than you, deal #b2 damage to that enemy."
     ]
   },
+  "${modID}:TarotCard": {
+    "NAME": "Tarot Card",
+    "FLAVOR": "Look past your mistakes to grow.\nby TheMonji",
+    "DESCRIPTIONS": [
+      "Whenever you discard a #yCurse during a #yScry, gain #b1 #yStrength."
+    ]
+  },
   "${modID}:Thunderstone": {
     "NAME": "Thunderstone",
     "FLAVOR": "Energy channeled grants a future burst of power. \nby altilly",
@@ -208,6 +236,13 @@
     "FLAVOR": "Never gonna give you up... \nby ElegantPoet3386",
     "DESCRIPTIONS": [
       "Whenever you Exhaust a card, gain #b1 #yTemporary #yStrength."
+    ]
+  },
+  "${modID}:FrequencyConverter": {
+    "NAME": "Frequency Converter",
+    "FLAVOR": "Helps you go to eleven. \nby TheMonji",
+    "DESCRIPTIONS": [
+      "Right click to activate. The next card you play is considered a Power. Usable once per combat."
     ]
   }
 }

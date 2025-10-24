@@ -24,5 +24,11 @@
       " random Power card of any color to your hand. It costs 0 this turn.",
       " random Power cards of any color to your hand. They cost 0 this turn."
     ]
+  },
+  "${modID}:FrequencyConverterPower": {
+    "NAME": "Convert Frequency",
+    "DESCRIPTIONS": [
+      "The next card you play this turn is considered a Power."
+    ]
   }
 }

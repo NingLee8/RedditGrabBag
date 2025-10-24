@@ -5,9 +5,11 @@ import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 import reddit_grab_bag.cards.MindWipe;
+import reddit_grab_bag.relics.TarotCard;
 
 @SpirePatch2(
         clz= ScryAction.class,
@@ -23,6 +25,11 @@ public class MindWipePatch {
         if (c.cardID.equals(MindWipe.ID)) {
             MindWipe mindWipe = (MindWipe) c;
             mindWipe.onScryDiscard();
+        }
+        if (c.type.equals(AbstractCard.CardType.CURSE)) {
+            if (AbstractDungeon.player.hasRelic(TarotCard.ID)) {
+                AbstractDungeon.player.getRelic(TarotCard.ID).onTrigger();
+            }
         }
     }
 
