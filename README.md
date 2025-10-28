@@ -38,6 +38,7 @@ Chosen based on balance, simplicity, and popularity.
 * [Step Stool](https://www.reddit.com/r/slaythespire/comments/1mxfcfy/who_stepped_on_him/) by Flover_tm
 * [Thunderstone](https://www.reddit.com/r/slaythespire/comments/1nrnjbx/relic_idea_converting_extra_energy_to_temp/) by altilly
 * [Ukulele](https://www.reddit.com/r/slaythespire/comments/1lz27qw/ironclad_exclusive_more_exhaust_synergy/) by ElegantPoet3386
+* [WeightedGlove](https://www.reddit.com/r/slaythespire/comments/1ofcp3k/concept_boss_relic_the_weighted_glove/) by TheDarkTrainer
 
 ---
 

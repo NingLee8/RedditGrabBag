@@ -76,6 +76,13 @@
       "Gain #b1 [E] at the start of your turn. Upon pick up, decrease your max HP by #b35."
     ]
   },
+  "${modID}:FrequencyConverter": {
+    "NAME": "Frequency Converter",
+    "FLAVOR": "Helps you go to eleven. \nby TheMonji",
+    "DESCRIPTIONS": [
+      "Right click to activate. The next card you play is considered a Power. Usable once per combat."
+    ]
+  },
   "${modID}:Icicle": {
     "NAME": "Icicle",
     "FLAVOR": "\"I would rather not get stabbed by an icicle, thanks\"- The Merchant, probably\nby ElegantPoet3386",
@@ -238,11 +245,11 @@
       "Whenever you Exhaust a card, gain #b1 #yTemporary #yStrength."
     ]
   },
-  "${modID}:FrequencyConverter": {
-    "NAME": "Frequency Converter",
-    "FLAVOR": "Helps you go to eleven. \nby TheMonji",
+  "${modID}:WeightedGlove": {
+    "NAME": "Weighted Glove",
+    "FLAVOR": "A particularly handy glove, but you grow weary from wielding it. \nby TheDarkTrainer",
     "DESCRIPTIONS": [
-      "Right click to activate. The next card you play is considered a Power. Usable once per combat."
+      "Draw #b10 cards at the start of each turn. You can no longer draw additional cards after the start of each turn."
     ]
   }
 }
